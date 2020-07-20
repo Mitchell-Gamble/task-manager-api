@@ -1,8 +1,11 @@
 var AWS = require('aws-sdk')
 
-AWS.config.update({region: 'us-east-2'});
+AWS.config.update({region: 'us-east-2'})
+AWS.config.accessKeyId = process.env.AWS_ACCESS_KEY_ID
+AWS.config.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY
 
 const senderEmail = 'diztro.91@googlemail.com'
+
 
 const sendWelcomeEmail = (email, name) => {
   let params = {
